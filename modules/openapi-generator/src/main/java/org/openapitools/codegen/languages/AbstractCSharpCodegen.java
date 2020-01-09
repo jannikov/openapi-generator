@@ -164,6 +164,8 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen implements Co
                         "Float",
                         "Guid?",
                         "Guid",
+						"TimeSpan",
+						"TimeSpan?",
                         "System.IO.Stream", // not really a primitive, we include it to avoid model import
                         "Object")
         );
@@ -194,10 +196,11 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen implements Co
         typeMapping.put("object", "Object");
         typeMapping.put("UUID", "Guid?");
         typeMapping.put("URI", "string");
+		typeMapping.put("TimeSpan", "TimeSpan");
 
         // nullable type
         nullableType = new HashSet<String>(
-                Arrays.asList("decimal", "bool", "int", "float", "long", "double", "DateTime", "DateTimeOffset", "Guid")
+                Arrays.asList("decimal", "bool", "int", "float", "long", "double", "DateTime", "DateTimeOffset", "Guid", "TimeSpan")
         );
         // value Types
         valueTypes = new HashSet<String>(
